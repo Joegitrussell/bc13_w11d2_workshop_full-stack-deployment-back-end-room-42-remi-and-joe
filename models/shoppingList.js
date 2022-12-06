@@ -17,3 +17,8 @@ export async function postListItem(listItem) {
   );
   return data.rows[0];
 }
+
+export async function deleteList() {
+  const data = await pool.query("TRUNCATE shopping");
+  return data.rows;
+}
